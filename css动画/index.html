@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css钟表</title>
+</head>
+	<style>
+		body {
+		  height: 100%;
+		  width: 100%;
+		  margin: 0px;
+		  position: absolute;
+		  background: black;
+		}
+
+		.container {
+		  margin: auto;
+		  width: 300px;
+		  height: 300px;
+		  position: relative;
+		  top: 45%;
+		  transform: translateY(-45%);
+		}
+
+		.ring {
+		  width: 300px;
+		  height: 300px;
+		  border-radius: 300px;
+		  position: absolute;
+		  mix-blend-mode: screen;
+		  /*元素与背景相融合   迭代*/
+		  background: transparent;
+		}
+
+		.red {
+		  border: 18px solid #d50f1c;
+		  animation: redanim linear 6s;
+		  animation-iteration-count: infinite;
+		  /*播放动画的次数 :无限次*/
+		}
+
+		.green {
+		  border: 18px solid #009927;
+		  animation: greenanim linear 6s;
+		  animation-iteration-count: infinite;
+		}
+
+		.blue {
+		  border: 18px solid #3569e1;
+		  animation: blueanim linear 6s;
+		  animation-iteration-count: infinite;
+		}
+
+		.yellow {
+		  border: 18px solid #edb40f;
+		  animation: yellowanim linear 6s;
+		  animation-iteration-count: infinite;
+
+		}
+
+		@keyframes redanim {
+		  0% {
+		    transform: rotate(0deg) scaleX(0.9) scaleY(1);
+		    /* 旋转：rotate  X轴方向缩放：scaleX  Y轴方向缩放：scaleY */
+		  }
+		  50% {
+		    transform: rotate(180deg) scaleX(0.9) scaleY(1);
+		  }
+		  100% {
+		    transform: rotate(360deg) scaleX(0.9) scaleY(1);
+		  }
+		}
+		@keyframes greenanim {
+		  0% {
+		    transform: rotate(31deg) scaleX(0.9) scaleY(1);
+		  }
+		  25% {
+		    transform: rotate(121deg) scaleX(1) scaleY(0.9);
+		  }
+		  50% {
+		    transform: rotate(211deg) scaleX(0.9) scaleY(1);
+		  }
+		  75% {
+		    transform: rotate(301deg) scaleX(1) scaleY(0.9);
+		  }
+		  100% {
+		    transform: rotate(391deg) scaleX(0.9) scaleY(1);
+		  }
+		}
+		@keyframes blueanim {
+		  0% {
+		    transform: rotate(413deg) scaleX(0.9) scaleY(1);
+		  }
+		  50% {
+		    transform: rotate(233deg) scaleX(0.9) scaleY(1);
+		  }
+		  100% {
+		    transform: rotate(53deg) scaleX(0.9) scaleY(1);
+		  }
+		}
+		@keyframes yellowanim {
+		  0% {
+		    transform: rotate(472deg) scaleX(0.9) scaleY(1);
+		  }
+		  25% {
+		    transform: rotate(382deg) scaleX(1) scaleY(0.9);
+		  }
+		  50% {
+		    transform: rotate(292deg) scaleX(0.9) scaleY(1);
+		  }
+		  75% {
+		    transform: rotate(202deg) scaleX(1) scaleY(0.9);
+		  }
+		  100% {
+		    transform: rotate(112deg) scaleX(0.9) scaleY(1);
+		  }
+		}
+		
+		.second{
+			width: 360px;
+		    height: 360px;
+		    transform-origin: center center;
+		    animation: miaozhen 60s normal infinite steps(60, end) 2s;
+		}
+		.zhizhen{
+		    height: 160px;
+		    width: 8px;
+		    background: #E04639;
+		    top: -120px;
+		    position: absolute;
+		    left: 0;
+		    top: -50px;
+		    right: 0;
+		    bottom: 0;
+		    margin: auto;
+		}
+		.center{
+			width: 40px;
+		    height: 40px;
+		    border-radius: 50%;
+		    background: #E04639;
+		    position: absolute;
+		    left: 0;
+		    top: 0;
+		    right: 0;
+		    bottom: 0;
+		    margin: auto;
+		}
+		@keyframes miaozhen {
+		  0% {
+		    transform: rotate(0deg);
+		  }
+		  100% {
+		    transform: rotate(360deg);
+		  }
+		}
+	</style>
+<body>
+	<div class="container">
+		  <div class="ring red"></div>
+		  <div class="ring green"></div>
+		  <div class="ring blue"></div>
+		  <div class="ring yellow"></div>
+		  <div class="second">
+		  	<div class="zhizhen"></div>
+		  	<div class="center"></div>
+		  </div>
+		  
+	</div>
+</body>
+</html>
